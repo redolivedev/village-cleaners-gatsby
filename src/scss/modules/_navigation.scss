@@ -1,0 +1,261 @@
+.site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  padding: 0 30px;
+  background: $white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include breakpoint(medium) {
+    background: transparent;
+    &.scrolled {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+  .logo {
+    width: 200px;
+  }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  .menu {
+    color: $white;
+    text-transform: uppercase;
+  }
+  * {
+    margin: 0 8px;
+  }
+}
+
+.line-wrap {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: $red;
+  border-radius: 100%;
+  span {
+    position: absolute;
+    height: 2px;
+    border-radius: 5px;
+    width: 25px;
+    left: 0px;
+    right: 0;
+    margin: auto;
+    background-color: $white;
+    transition: 1s;
+    &:nth-child(1) {
+      top: 18px;
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 24px;
+    }
+    &:nth-child(4) {
+      top: 30px;
+    }
+  }
+}
+
+#close {
+  .line-wrap {
+    border: 2px solid $gray;
+    background: $white;
+    top: -60px;
+    right: -30px;
+    span {
+      background: $gray;
+      &:nth-child(1) {
+        top: 18px;
+        opacity: 0;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        top: 22px;
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      background: $gray;
+      span {
+        background: $white;
+      }
+    }
+  }
+}
+.phone {
+  display: none;
+  color: $white;
+  font-family: $font;
+  letter-spacing: 1px;
+  float: right;
+  margin-top: 20px;
+  padding-right: 10px;
+  border-right: 1px solid $gray;
+  font-size: 13px;
+  @include transition(0.5s);
+  @include breakpoint(xlarge) {
+    display: block;
+  }
+  &:hover {
+    color: $red;
+  }
+}
+
+.topbar {
+  display: none;
+  @include breakpoint(xlarge) {
+    display: block;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 20px;
+    a {
+      color: $white;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding-bottom: 5px;
+      display: block;
+      position: relative;
+      &:after {
+        content: "";
+        width: 0;
+        background: $red;
+        display: block;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        @include transition(0.5s);
+      }
+    }
+    a:hover {
+      color: $red;
+      &:after {
+        width: 100%;
+      }
+    }
+    &:last-child {
+      border-left: 1px solid $white;
+    }
+  }
+}
+
+.staticlogo {
+  @include transition(1s);
+  display: none;
+  @include breakpoint(medium) {
+    height: 38px;
+  }
+}
+
+.fixed-nav {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: $gray;
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: $red;
+    display: block;
+    height: 50px;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 100%;
+    color: $white;
+
+    i {
+      font-size: 20px;
+    }
+    &:hover {
+      background: $white;
+      color: $red;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .active > a {
+      background: transparent;
+    }
+    li {
+      display: block;
+      padding: 10px 0;
+      a {
+        font-size: 18px;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        position: relative;
+        padding: 5px 0 10px 0;
+        display: inline-block;
+        @include breakpoint(medium) {
+          font-size: 26px;
+        }
+        &:after {
+          content: "";
+          width: 0;
+          background: $red;
+          display: block;
+          height: 3px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          @include transition(0.5s);
+        }
+        &:hover {
+          color: $red;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}

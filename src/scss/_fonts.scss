@@ -1,0 +1,110 @@
+@font-face {
+	font-family: "ROThemeFont";
+	src: url('../iconfont/fonts/ROThemeFont.eot');
+	src: url('../iconfont/fonts/ROThemeFont.eot?#iefix') format('eot'),
+		// url('../iconfont/fonts/ROThemeFont.woff2') format('woff2'),
+		url('../iconfont/fonts/ROThemeFont.woff') format('woff'),
+		url('../iconfont/fonts/ROThemeFont.ttf') format('truetype'),
+		// url('../iconfont/fonts/ROThemeFont.svg#ROThemeFont') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "ROThemeFont";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == arw {
+		$char: "\E001";
+	}
+	@if $filename == close {
+		$char: "\E002";
+	}
+	@if $filename == down {
+		$char: "\E003";
+	}
+	@if $filename == ham {
+		$char: "\E004";
+	}
+	@if $filename == left {
+		$char: "\E005";
+	}
+	@if $filename == location {
+		$char: "\E006";
+	}
+	@if $filename == minus {
+		$char: "\E007";
+	}
+	@if $filename == pin {
+		$char: "\E008";
+	}
+	@if $filename == plus {
+		$char: "\E009";
+	}
+	@if $filename == right {
+		$char: "\E00A";
+	}
+	@if $filename == x {
+		$char: "\E00B";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-arw {
+	@include icon(arw);
+}
+.icon-close {
+	@include icon(close);
+}
+.icon-down {
+	@include icon(down);
+}
+.icon-ham {
+	@include icon(ham);
+}
+.icon-left {
+	@include icon(left);
+}
+.icon-location {
+	@include icon(location);
+}
+.icon-minus {
+	@include icon(minus);
+}
+.icon-pin {
+	@include icon(pin);
+}
+.icon-plus {
+	@include icon(plus);
+}
+.icon-right {
+	@include icon(right);
+}
+.icon-x {
+	@include icon(x);
+}

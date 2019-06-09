@@ -1,0 +1,166 @@
+.bg-icon {
+	width: 200px;
+	margin: auto;
+	line-height: 1;
+	opacity: 0;
+	@include transition(1s);
+	@include transform(.5);
+
+	svg {
+		fill: $dark-red;
+	}
+}
+
+a.service {
+	display: none;
+	@include breakpoint(large) {
+		display: block;
+	}
+}
+
+div.mobile-service-wrapper {
+	@include breakpoint(large) {
+		display: none;
+	}
+}
+
+.service {
+	background: $light-gray;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	cursor: pointer;
+	display: block;
+
+	.pad {
+		border: 1px solid $gray;
+		position: relative;
+
+		.h5 {
+			padding: 0 2em;
+		}
+
+		.sm-icon {
+			width: 100px;
+			margin: auto;
+			@include transition(1s);
+			@include transform(1);
+			height: 107px;
+
+			svg {
+				fill: $red;
+			}
+		}
+
+		.max-circle {
+			@include vertical-center;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
+	@include breakpoint(large) {
+		&:hover {
+			background: $red;
+
+			.bg-icon {
+				opacity: 1;
+				@include transform(1);
+			}
+
+			.sm-icon {
+				opacity: 0;
+				width: 0;
+				@include transform(.2);
+			}
+
+			.max-circle {
+				color: $white;
+			}
+
+			a{
+				color: $white;
+				h2{
+					color: $white;
+				}
+			}
+
+
+			.pad {
+				border: 1px solid $white;
+			}
+		}
+	}
+}
+
+.whitearea {
+	background: rgba(255, 255, 255, .8);
+	padding: 40px 20px;
+	margin: 20px;
+	@include breakpoint(medium) {
+		padding: 40px;
+		margin: 40px;
+	}
+}
+
+.bg-red {
+	background: $red;
+}
+
+.other-services {
+	.columns {
+		border: 1px solid $white;
+	}
+}
+
+.icon-area {
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	height: 120px;
+	width: 100%;
+
+	.h6 {
+		color: $white;
+		position: relative;
+		z-index: 2;
+		font-size: 14px;
+		margin: 0;
+		padding: 0 1em;
+
+		&:after {
+			display: none;
+		}
+	}
+
+	.icon {
+		fill: $dark-red;
+		width: 80px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		@include vertical-center;
+		margin: auto;
+		opacity: 0.6;
+	}
+
+	&:hover {
+		background: $dark-red;
+
+		.icon {
+			fill: $red;
+		}
+	}
+	@include breakpoint(medium down) {
+		height: 100px;
+	}
+}
+
+.title {
+	font-size: 20px;
+	color: $white;
+	padding: 40px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	text-align: center;
+}

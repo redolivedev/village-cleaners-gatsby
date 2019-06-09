@@ -1,0 +1,84 @@
+.button, .btn { 
+	font-weight:600;
+	text-transform: uppercase;
+	padding:20px 0;
+	letter-spacing:1px;
+	margin-top:20px;
+	color:$black;
+	display: inline-block;
+	position: relative;
+		&.white {
+			color:$white;
+			&:before {
+				background:$white;
+			}
+			&:hover {
+				color:$white;
+				&:after { 
+					background:$gray;
+				}
+			}
+		}
+		&:not(.solid-btn){
+		&:before {
+			content:'';
+			position:absolute;
+			top:0;
+			right:0;
+			width: 100%;
+			display: block;
+			height: 3px;
+			background:$gray;
+			@include transition(.5s);
+		}
+		&:after {
+			content:'';
+			position:absolute;
+			top:0;
+			left:0;
+			width: 0;
+			display: block;
+			height: 3px;
+			background:$red;
+			@include transition(.5s);
+		}
+		}
+		&:hover { 
+			color:$gray;
+			&:before { 
+				width: 0;
+			}
+			&:after{ 
+				width: 100%;
+			}
+		}
+}
+.solid-btn {
+	background:$red;
+	color:$white;
+	display: inline-block;
+	padding:10px 25px;
+	text-transform: uppercase;
+	font-weight:600;
+	letter-spacing: 1px;
+	min-width:200px;
+	text-align:center;
+	&:hover, 
+	&:focus {
+		background:$gray;
+		color:$white;
+	}
+	&.gray, &.done {
+		background:$medium-gray;
+		&:hover {
+			background:$white;
+			color:$gray;
+		}
+	}
+}
+.h1 .solid-btn {
+	font-size:16px;
+	font-weight:600;
+	margin-top:20px;
+}
+

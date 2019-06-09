@@ -1,0 +1,126 @@
+.white {
+	color:$white;
+	p,a {color:$white;}
+}
+.gray {
+	color:$gray;
+	p,a {color:$gray;}
+}
+.bold {
+	font-weight:bold;
+}
+.pad100 {
+	padding:100px 0;
+}
+.pad80 {
+	padding:80px 0;
+}
+.pad80off {
+	padding: 80px 0 70px;
+}
+.pad60 {
+	padding:60px 0;
+}
+.pad40 {
+	padding:40px 0;
+}
+.pad4 {
+	padding:40px;
+}
+.mrg-btm {
+	margin-bottom:30px;
+}
+.mrg-top {
+	margin-top:30px;
+}
+.mrg-top50 {
+	margin-top:50px;
+}
+.padd-btm-60 {
+	padding-bottom:60px;
+}
+.extra-mrg {
+	margin: 30px 0 40px;
+}
+.bg-dark-gray {
+	background:$gray;
+	color:$white;
+	.solid-btn:hover {
+		background:$white;
+		color:$red;
+	}
+}
+.upp {
+	text-transform: uppercase;
+}
+.mrg-right {
+	margin-right:20px;
+}
+.gray-top {
+	background:$gray;
+	height:137px;
+	@include breakpoint(medium){
+		height:105px;
+	}
+}
+body {
+	font-size:14px;
+}
+.big {
+	font-size:24px;
+}
+.rel {
+	position: relative;
+}
+.mobile-center {
+	@include breakpoint(medium down){
+		text-align:center;
+	}
+}
+.overflow {
+	height:0;
+	overflow:hidden;
+}
+.content {
+	.solid-btn {
+		margin-top:20px;
+	}
+	ul {
+		margin:0;
+		padding:0;
+		list-style:none;
+		li { 
+			position:relative;
+			padding:5px 0 5px 20px;
+			&:after {
+				content:'';
+				display: block;
+				height: 8px;
+				width: 8px;
+				border-radius: 100%;
+				position:absolute;
+				background:$red;
+				left:0;
+				top:10px;
+			}
+		 }
+	}
+}
+.android-banner {
+	background:$gray;
+	display:block;
+	position:relative;
+	margin-top:90px;
+	color:$red;
+	color:$white;
+	padding:20px;
+	text-align:center;
+	.and {
+		padding-right:20px;
+	}
+	.lrg{
+		font-size: 20px;
+		font-weight:bold;
+	}
+}
+

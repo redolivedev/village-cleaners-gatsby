@@ -1,0 +1,144 @@
+.nf-form-title {
+	display:none;
+}
+
+.nf-form-fields-required, .nf-fu-progress  {
+	display:none;
+}
+.nf-form-content {
+	.btn.nf-fu-fileinput-button {
+		display:block;
+		width: 100%;
+		margin:0;
+		padding:0px;
+		background-color: $light-gray;
+		font-family: $font;
+		span {
+			background:$red;
+			cursor: pointer;
+			float:right;
+			color:$white;
+			padding:14px 20px;
+			font-family: $font;
+		}
+		&:before, &:after  {
+			display: none;
+		}
+	}
+	.files_uploaded {
+		position:absolute;
+		top:12px;
+		left:20px;
+	}
+		.nf-field-container {
+			position:relative;
+			margin-bottom:35px;
+			clear:both;
+			font-family: $font;
+			.field-wrap {
+				padding:0 10px;
+			
+				.nf-field-label {
+					position:absolute;
+					top:12px;
+					left:20px;
+					z-index: 2;
+					font-weight: 400;
+					font-size:16px;
+					line-height: 20px;
+					margin-bottom:0 !important;
+					@include transition(1s);
+
+					.ninja-forms-req-symbol {
+						color:$gray;
+					}
+					label {
+						font-weight: 600;
+						color:$medium-gray;
+						text-transform: uppercase;
+					}
+				}
+				&.stay-up {
+					.nf-field-label {
+						top:-20px;
+						bottom:auto;
+						@include transition(1s);
+					}
+					
+				}
+				&.listselect-wrap {
+					.ninja-forms-field {
+						background: #e6e6e6 url('../images/down.png') no-repeat right center;
+					}
+				}
+			}
+			#nf-field-10-wrap {
+				.nf-field-label {
+					top:-20px;
+					bottom:auto;
+				}
+			}	
+			.nf-error-msg {
+				font-size: 10px;
+				position:absolute;
+				left:20px;
+				bottom:-15px;
+			}
+			.ninja-forms-field {
+				border-top:0;
+				border-left:0;
+				border-right:0;
+				border-bottom:0;
+				background:$light-gray;
+				box-shadow: none;
+				-webkit-appearance: none;
+  				-webkit-border-radius: 0;
+  				padding: 10px;
+  				 outline: none;
+  				 line-height: 22px;
+
+				&::selected, 
+				&:focus {
+					
+					-webkit-appearance: none;
+				}
+
+			}
+			.submit-wrap {
+				text-align:right;
+				.nf-field-element {
+					margin:0 auto 40px;
+				}
+				[type="button"] {
+					background:$red;
+					color:$white;
+					padding:10px 35px;
+					text-transform: uppercase;
+					font-weight: 700;
+					letter-spacing: 1px;
+					font-family: $font;
+				}
+			}
+		
+			&.fifty {
+				@include breakpoint(large){
+					width: 50%;
+					float:left;
+					display: block;
+					clear:none;
+				}
+			}
+
+		}
+	
+	}
+
+	.page-id-315 {
+		.content ul {
+			margin: 0 auto;
+				@include breakpoint(medium down){
+					padding-bottom:40px;
+					max-width: 200px;
+				}
+		}
+	}

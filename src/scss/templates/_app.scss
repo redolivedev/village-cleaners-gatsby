@@ -1,0 +1,66 @@
+.flip-items {
+	
+	.svg {
+		line-height: 100px;
+		height: 100px;
+		width: 100px;
+		border-radius: 100%;
+		cursor: pointer;
+		svg {
+			fill:$red;
+			line-height: 100px;
+			height: 100px;
+			width: 100px;
+		}
+		&:hover, &.yes {
+			background-color: $red;
+			svg {
+				fill:$white;
+			}
+		}
+	
+	}
+	img {
+		@include transition(1s);
+		@include breakpoint(xlarge){
+			position: absolute;
+			left:0; 
+			right:0;
+			margin: auto;
+			width: 330px;
+			top:70px;
+			opacity: 0;
+		}
+	}
+	.yes {
+		opacity: 1;
+		@include transition(1s);
+	}
+}
+
+.app {
+	
+	margin-bottom:100px;
+	@include breakpoint(xlarge){
+		padding-top:60px;
+		overflow:hidden;
+	}
+}
+.base-img {
+	display:none;
+	@include breakpoint(xlarge){
+		position:absolute;
+		top:70px;
+		left:0; 
+		right:0;
+		margin: auto;
+		display: block;
+		width: 330px;
+	}
+}
+
+.small-tex {
+	max-width:300px;
+	margin:auto;
+	font-size:12px;
+}

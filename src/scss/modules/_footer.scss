@@ -1,0 +1,233 @@
+.footer {
+  background: $gray;
+  color: $white;
+  padding-bottom: 40px;
+  @include breakpoint(large) {
+    .mobile-center {
+      text-align: center;
+    }
+  }
+  .xsm {
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 15px 0 40px;
+    @include breakpoint(xlarge) {
+      margin: 0;
+    }
+    // &:hover {
+    //   background:$red;
+    // }
+  }
+  .pad {
+    padding: 20px 0 0;
+
+    @include breakpoint(xlarge) {
+      padding: 40px 0 30px;
+    }
+
+    .coupon-button {
+      background: $red;
+      color: $white;
+      display: inline-block;
+      padding: 10px 25px;
+      text-transform: uppercase;
+      min-width: 200px;
+      text-align: center;
+      transition: all 0.3s ease;
+      &:hover {
+        background: $secondary-color;
+        border: solid 1px $red;
+      }
+    }
+  }
+
+  .ro-links {
+    color: $white;
+  }
+}
+.bdr {
+  border-bottom: 1px solid $medium-gray;
+  margin-bottom: 30px;
+}
+
+.source {
+  margin-top: 20px;
+  font-family: $font;
+  .social {
+    font-size: 20px;
+    color: $white;
+    display: inline-block;
+    margin: 0 5px;
+  }
+  @include breakpoint(xlarge) {
+    float: left;
+    margin-top: 0;
+  }
+}
+
+.copy {
+  flex-shrink: 1;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding-bottom: 10px;
+}
+
+.mailchimp {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+
+  .mailchimp-text {
+    color: $gray;
+    border-top: 0;
+    border-left: 0;
+    height: 40px;
+    border-right: 0;
+    border-bottom: 1px solid $gray;
+    box-shadow: none;
+    margin: 0;
+    width: 340px;
+  }
+  .mailchimp-button {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 15px;
+    height: 40px;
+    background: $red;
+    color: $white;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    -webkit-border-radius: 0;
+  }
+  .mailchimp-error,
+  .mailchimp-success {
+    color: $red;
+    font-size: 12px;
+  }
+}
+.foot-nav {
+  flex-grow: 1;
+  margin-right: 20px;
+  ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    a {
+      color: $white;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 10px;
+      display: inline-block;
+      position: relative;
+      @include breakpoint(xlarge) {
+        padding: 0 0 10px 0;
+      }
+      &:after {
+        content: "";
+        width: 0;
+        background: $red;
+        display: block;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        @include transition(0.5s);
+      }
+      &:hover {
+        color: $red;
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+#menu-the-main-menu-1 {
+  &:before {
+    content: "MENU";
+    font-family: $font;
+    color: $red;
+    border-bottom: 2px solid $red;
+    font-weight: 600;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+.coupons {
+  background: $white;
+  padding: 40px 10px;
+  color: $gray;
+  max-width: 700px;
+  text-align: center;
+  @include breakpoint(large) {
+    padding: 100px;
+  }
+  .coupon-area {
+    padding: 60px;
+    max-width: 500px;
+    margin: 40px auto 0;
+    background: $light-gray;
+    h4 {
+      margin-bottom: 20px;
+    }
+    .coupon-button {
+      background: $red;
+      color: $white;
+      display: inline-block;
+      padding: 10px 25px;
+      text-transform: uppercase;
+      min-width: 200px;
+      text-align: center;
+      transition: all 0.3s ease;
+      &:hover {
+        background: $secondary-color;
+      }
+    }
+  }
+}
+
+.location-button-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  a {
+    background: $red;
+    color: $white;
+    display: inline-block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+    -webkit-box-shadow: -1px 0px 19px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 19px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 19px 1px rgba(0, 0, 0, 0.75);
+    &:hover {
+      background: $secondary-color;
+    }
+  }
+}
+
+.page-template-front #real-footer {
+  display: none;
+}

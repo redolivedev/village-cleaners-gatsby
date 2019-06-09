@@ -1,0 +1,42 @@
+.content-area {
+    background: $light-gray;
+    padding: 80px 40px 40px;
+    position:relative;
+    height: 100%;
+
+}
+.single .content-area {
+    padding: 60px 20px 10px;
+    height: 100%;
+}
+.date {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    background:$red;
+    color:$white;
+    width: 170px;
+    margin:auto;
+    text-align:center;
+    padding:12px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.share_bar {
+    padding:40px 0 40px;
+    ul {
+        list-style:none;
+        text-align: center;
+        li {
+            font-size: 12px;
+            color:$red;
+            display: inline;
+            font-weight: bold;
+            padding-right:15px;
+            a {font-size:20px;}
+        }
+    }
+}

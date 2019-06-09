@@ -1,0 +1,23 @@
+.cta-area {
+	padding:20px;
+	color:$white;
+	text-align:center;
+	.btn {
+		color:$white;
+		margin-left:10px;
+		margin-right:10px;
+	}
+	h2 {
+		padding-bottom:0;
+		&:after {
+			display: none;
+		}
+	}
+}
+.border {
+	border: 1px solid $white;
+}
+
+.cta-pad {
+	padding: 60px 10px 30px;
+}

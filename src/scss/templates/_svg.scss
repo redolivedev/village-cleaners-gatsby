@@ -1,0 +1,24 @@
+.balloon {
+	max-width:140px;
+	margin:100px auto 20px;
+	svg {
+		width:100%;
+		fill:$white;
+	}
+}
+
+.logo {
+	max-width:140px;
+	display: inline-block;
+	svg {
+		width:100%;
+		fill:$gray;
+	}
+	 @include breakpoint(medium){ 
+	 	max-width:200px;
+		display: block;
+		svg {
+			fill:$white;
+		}
+	 }
+}

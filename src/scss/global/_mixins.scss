@@ -1,0 +1,120 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+******************************************************************/
+@mixin keyframes ($animation_name) {
+  @-webkit-keyframes $animation_name {
+    @content;
+  }
+
+  @-moz-keyframes $animation_name {
+    @content;
+  }
+
+  @keyframes $animation_name {
+    @content;
+  }
+}
+
+@mixin animate ($delay, $duration, $animation, $fillmode: forwards) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-fill-mode: $fillmode;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-fill-mode: $fillmode;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: $fillmode;
+}
+
+@keyframes fadeIn {
+  0%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes slowmove{
+  from   {
+    transform:translateZ(0) rotate(40deg);
+  }
+  to {
+    transform:translateZ(0) rotate(0);
+  }
+}
+@keyframes medmove{
+  from   {
+    transform: translate3d(0px, 0px, 0px);
+    box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 30px 0px;
+  }
+  to {
+    transform: translate3d(0px, 0px, 170px);
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 30px 0px
+  }
+}
+
+
+
+@mixin transition($time) {
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	-o-transition: all $time ease-in-out;
+	transition: all $time ease-in-out;
+}
+@mixin transition-delay($time) {
+
+-webkit-transition: all 1s ease $time;
+   -moz-transition: all 1s ease $time;
+     -o-transition: all 1s ease $time;
+    -ms-transition: all 1s ease $time;
+        transition: all 1s ease $time;
+    }
+
+@mixin delay($time) {
+	-webkit-transition-delay: $time; -moz-transition-delay: $time; -o-transition-delay: $time;transition-delay: $time;
+}
+@mixin trans($rotate) {
+	-webkit-transform: translateZ(0) rotate($rotate);
+	-ms-transform: rotate($rotate); /* IE 9 */
+	-moz-transform:translateZ(0)  rotate($rotate); /* Chrome, Safari, Opera */
+	transform:translateZ(0) rotate($rotate);
+}  
+@mixin column($num) {
+	-webkit-column-count: $num; /* Chrome, Safari, Opera */
+	-moz-column-count: $num; /* Firefox */
+	column-count: $num; 
+} 
+
+@mixin transform($offset) {
+	-webkit-transform: scale($offset) ;
+	-ms-transform: scale($offset); /* IE 9 */
+	-moz-transform: scale($offset)  ; /* Chrome, Safari, Opera */
+	transform: scale($offset);
+}  
+@mixin trans-stroke($sec) {
+	-webkit-transition: stroke-dashoffset $sec ease-in-out; 
+	-moz-transition: stroke-dashoffset $sec ease-in-out; 
+	-o-transition: stroke-dashoffset $sec ease-in-out; 
+	transition: stroke-dashoffset $sec ease-in-out; 
+}
+
+
